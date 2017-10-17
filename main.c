@@ -10,11 +10,11 @@
 #define PWM_FREQ_HIGH	1	// PWM frequency:	0 = 16KHz
 				//			1 = 32KHz 
 
-#define DUTY_MIN_LIMIT	10	// min/max limits according...
+#define DUTY_MIN_LIMIT	2	// min/max limits according...
 #define DUTY_MAX_LIMIT	250	// ... your fan
 
 #define SAMPLE_RATE     128	// samples of input pulses to calculate the duty rate
-#define OUTIN_RATIO	32768	// output/input ratio to reset timer1 overflow
+#define OUTIN_RATIO	131072	// output/input ratio to reset timer1 overflow
 
 volatile uint32_t 	pulseOn,
 			pulseLength,
@@ -75,9 +75,9 @@ ISR (TIMER1_OVF_vect)
 {
 	cli();
 	
-	pulseLength += 255; 
+	pulseLength += 256; 
 
-	if (pulseLength > OUTIN_RATIO) // if long time no pulse, erase flag to switch off the pwm!
+	if (pulseLength >= OUTIN_RATIO) // if long time no pulse, erase flag to switch off the pwm!
 	{
 		inputPulse = false;
 	}
@@ -132,7 +132,7 @@ ISR(PCINT0_vect)
 		else // next rising edge, end of period
 		{
 			pulseLength += (uint32_t)timerVal;
-			pwmValue += ((((pulseOn * 100) / pulseLength) *255) / 100); // calculate duty cycle for this pulse an add it
+			pwmValue += ((((pulseOn * 100) / pulseLength) *256) / 100); // calculate duty cycle for this pulse an add it
 
 			samples++;
 			first = false;
