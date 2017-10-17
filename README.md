@@ -6,7 +6,7 @@ If your fan works like a speaker, you know what I mean ;-)
 
 An ATTiny85 or similar MCU, convert the low pwm-frequency of 976.5625Hz (e.g. a standard Arduino pwm frequency) up to 32Khz. You need only a cheap ATTiny model, this program and a 10k resistor. The duty cycle of the puls is not touched, that means:
 
-  Input duty cycle = Output duty cycle!
+  Input duty cycle = Output duty cycle
 
 In this example an ATTiny85 is used.
 
