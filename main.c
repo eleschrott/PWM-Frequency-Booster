@@ -4,7 +4,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define PWM_INPT	PB4	// PWM low frequency input pin
+#define PWM_INPUT	PB4	// PWM low frequency input pin
 #define PWM_OUTPUT	PB0	// PWM high frequency output pin
 
 #define PWM_FREQ_HIGH	1	// PWM frequency:	0 = 16KHz
