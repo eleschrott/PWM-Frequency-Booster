@@ -1,7 +1,7 @@
-    #define F_CPU 8000000UL
+	#define F_CPU 8000000UL
 
 	#include <stdbool.h>
-    #include <avr/io.h>
+	#include <avr/io.h>
 	#include <avr/interrupt.h>
 
 	#define PWM_INPUT		PB4		// PWM low frequency input pin
