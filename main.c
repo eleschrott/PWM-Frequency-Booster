@@ -137,6 +137,5 @@
 				pulseLength += (uint32_t)timerVal; // get pulse-on time 
 				pulseOn = pulseLength;
 		}
-		
 		sei();
 	}
