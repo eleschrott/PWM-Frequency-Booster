@@ -34,7 +34,7 @@ int main()
 	GIMSK |= _BV(PCIE);		// turns on pin change interrupts
 
 	TCCR1 |= _BV(CS01);		// timer1 prescaler 8 = 1MHz 
-	TIMSK |= (1<<TOIE1);		// set overflow interrupt on timer1
+	TIMSK |= _BV(TOIE1);		// set overflow interrupt on timer1
 
 	sei();				// enable interrupts
 
