@@ -21,7 +21,7 @@ volatile uint32_t 	pulseOn,
 			pwmValue;
 volatile uint8_t	pwmDuty = 0,
 			samples = 0;
-volatile bool		first = false,
+volatile bool		fallingEdge = false,
 			pwmOn = true,
 			inputPulse = false;
 			
@@ -118,9 +118,9 @@ ISR(PCINT0_vect)
 
 	if (PINB & _BV(PWM_INPUT)) // rising edge of pulse
 	{
-		if (!first) // begin of pulse
+		if (!fallingEdge) // begin of pulse
 		{
-			first = true;
+			fallingEdge = true;
 			pulseLength = 0;
 			pulseOn = 0;
 
@@ -135,14 +135,14 @@ ISR(PCINT0_vect)
 			pwmValue += ((((pulseOn * 100) / pulseLength) *256) / 100); // calculate duty cycle for this pulse an add it
 
 			samples++;
-			first = false;
+			fallingEdge = false;
 			TCNT1 = 0;	// reset timer1
 
 			sei();
 			return;
 		}
 	}
-	else if (first) // falling edge
+	else if (fallingEdge) // falling edge
 	{
 		pulseLength += (uint32_t)timerVal; // get pulse-on time 
 		pulseOn = pulseLength;
