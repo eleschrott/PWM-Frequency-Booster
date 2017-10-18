@@ -57,7 +57,6 @@
 			}
 			else if (((pwmOn == true) && (pwmDuty <= DUTY_MIN_LIMIT)) || ((pwmOn == true) && (inputPulse == false))) // stop pwm
 			{
-				OCR0A = 0;
 				pwmOn = false;
 				TCCR0B	&= ~_BV(CS00);		 // stop timer0 
 				PORTB	&= ~_BV(PWM_OUTPUT); // set PWM_OUTPUT to LOW
@@ -137,5 +136,6 @@
 				pulseLength += (uint32_t)timerVal; // get pulse-on time 
 				pulseOn = pulseLength;
 		}
+		
 		sei();
 	}
