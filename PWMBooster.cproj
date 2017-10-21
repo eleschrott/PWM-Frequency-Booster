@@ -142,7 +142,7 @@
         </avrgcc.linker.libraries.Libraries>
         <avrgcc.linker.libraries.LibrarySearchPaths>
           <ListValues>
-            <Value>C:\Users\wolle\Documents\Arduino\libraries\PinChangeInterrupt-master\src</Value>
+            <Value></Value>
           </ListValues>
         </avrgcc.linker.libraries.LibrarySearchPaths>
         <avrgcc.assembler.general.IncludePaths>
