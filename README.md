@@ -11,7 +11,7 @@ An ATTiny85 or similar MCU, convert the low pwm-frequency of 976.5625Hz (e.g. a 
 In this example an ATTiny85 is used.
 
 <p align="center">
-  <img src="attiny.png" width="350"/>
+  <img src="img/attiny.png" width="400"/>
 </p>
 
   * The low pwm input is on pin3 (PB4), the high output pwm on pin5 (PB0).
