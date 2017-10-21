@@ -9,16 +9,17 @@ An ATTiny85 or similar MCU, convert the low pwm-frequency of **976.5625Hz** (e.g
 ````
 Input Duty Cycle = Output Duty Cycle
 ````
-### In this example an ATTiny85 is used.
-<p align="left"><img src="img/attinyx5.png" width="550"/></p>
+| ### In this example an ATTiny85 is used. | ![attiny](img/attinyx5.png "ATTiny85") |
 
-  * The low pwm input is on pin3 (PB4), the high output pwm on pin5 (PB0).
-  * On pin 1, a 10k resistor is connected direct to VCC.
-  * The two caps are standard	blocking capacitors
+---
   
 <p align="left"><img src="img/schematic.png" width="550"/></p>
 
-
+ * The low pwm input is on pin3 (PB4), the high output pwm on pin5 (PB0).
+ * On pin 1, a 10k resistor is connected direct to VCC.
+ * The two caps are standard	blocking capacitors
+  
+---
 In the header section you can find some values to adjust the program according to your situation:
 ```c++
 #define PWM_INPUT      // PWM low frequency input pin
