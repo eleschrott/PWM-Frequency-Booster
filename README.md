@@ -9,13 +9,12 @@ An ATTiny85 or similar MCU, convert the low pwm-frequency of 976.5625Hz (e.g. a 
   Input duty cycle = Output duty cycle
 
 In this example an ATTiny85 is used.
-
-<p align="center">
-  <img src="img/attinyx5.png" width="550"/>
-</p>
+<p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
   * The low pwm input is on pin3 (PB4), the high output pwm on pin5 (PB0).
   * On pin 1, a 10k is connected direct to VCC.
+  
+<p align="left"><img src="img/schematic.png" width="550"/></p>
 
 In the header section you can find some values to adjust the program according to your situation:
 
