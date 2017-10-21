@@ -12,7 +12,8 @@ Input Duty Cycle = Output Duty Cycle
 #### In this example an ATTiny85 is used. <p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
 ---
-  
+Schematics:
+
 <p align="left"><img src="img/schematic.png" width="550"/></p>
 
  * The low pwm input is on pin3 (PB4), the high output pwm on pin5 (PB0).
@@ -20,6 +21,8 @@ Input Duty Cycle = Output Duty Cycle
  * The two caps are standard	blocking capacitors
   
 ---
+Software:
+
 In the header section you can find some values to adjust the program according to your situation:
 ```c++
 #define PWM_INPUT      // PWM low frequency input pin
@@ -28,7 +31,6 @@ In the header section you can find some values to adjust the program according t
 #define DUTY_MIN_LIMIT // min limit according your fan 
 #define DUTY_MAX_LIMIT // max limit according your fan
 ```
+Programmer:
 
-One hint to program the MCU:
-
---> Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
+One hint to program the MCU: Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
