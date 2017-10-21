@@ -4,17 +4,17 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define PWM_INPUT		PB4	// PWM low frequency input pin
-#define PWM_OUTPUT		PB0	// PWM high frequency output pin
+#define PWM_INPUT	PB4	// PWM low frequency input pin
+#define PWM_OUTPUT	PB0	// PWM high frequency output pin
 
-#define PWM_FREQ_HIGH		1	// PWM frequency:	0 = 16KHz
-					//			1 = 32KHz 
+#define PWM_FREQ_HIGH	1	// PWM frequency: 0 = 16KHz
+				//		  1 = 32KHz 
 
-#define DUTY_MIN_LIMIT		3	// min/max limits according...
-#define DUTY_MAX_LIMIT		249	// ... your fan
+#define DUTY_MIN_LIMIT	3	// min/max limits according...
+#define DUTY_MAX_LIMIT	249	// ... your fan
 
-#define SAMPLE_RATE		128	// samples of input pulses to calculate the duty rate
-#define OUTIN_RATIO		131072	// output/input ratio to reset timer1 overflow
+#define SAMPLE_RATE	128	// samples of input pulses to calculate the duty rate
+#define OUTIN_RATIO	131072	// output/input ratio to reset timer1 overflow
 
 volatile uint32_t	pulseOn,
 			pulseLength,
