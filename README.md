@@ -8,6 +8,7 @@ An ATTiny85 or similar MCU, convert the low pwm-frequency of 976.5625Hz (e.g. a 
 
 - Input duty cycle = Output duty cycle
 
+
 In this example an ATTiny85 is used.
 <p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
@@ -16,6 +17,7 @@ In this example an ATTiny85 is used.
   * The two caps are standard	blocking capacitors
   
 <p align="left"><img src="img/schematic.png" width="550"/></p>
+
 
 In the header section you can find some values to adjust the program according to your situation:
 
