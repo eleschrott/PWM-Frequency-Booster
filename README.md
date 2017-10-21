@@ -9,7 +9,7 @@ An ATTiny85 or similar MCU, convert the low pwm-frequency of **976.5625Hz** (e.g
 ````
 Input Duty Cycle = Output Duty Cycle
 ````
-| ### In this example an ATTiny85 is used. | ![attiny](img/attinyx5.png "ATTiny85") |
+#### In this example an ATTiny85 is used. <p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
 ---
   
@@ -28,7 +28,6 @@ In the header section you can find some values to adjust the program according t
 #define DUTY_MIN_LIMIT // min limit according your fan 
 #define DUTY_MAX_LIMIT // max limit according your fan
 ```
-
 
 One hint to program the MCU:
 
