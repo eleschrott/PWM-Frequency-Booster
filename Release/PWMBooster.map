@@ -218,7 +218,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x4d0
+.text           0x00000000      0x4c0
  *(.vectors)
  .vectors       0x00000000       0x1e D:/Programme/Elektronik/Atmel/Studio/7.0/Packs/Atmel/ATtiny_DFP/1.3.132/gcc/dev/attiny85/avr25/crtattiny85.o
                 0x00000000                __vector_default
@@ -293,26 +293,26 @@ END GROUP
                 0x00000056                . = ALIGN (0x2)
  *(.text.*)
  .text.startup.main
-                0x00000056       0xa4 main.o
+                0x00000056       0x94 main.o
                 0x00000056                main
  .text.__vector_4
-                0x000000fa       0x6a main.o
-                0x000000fa                __vector_4
+                0x000000ea       0x6a main.o
+                0x000000ea                __vector_4
  .text.__vector_2
-                0x00000164      0x2f2 main.o
-                0x00000164                __vector_2
+                0x00000154      0x2f2 main.o
+                0x00000154                __vector_2
  .text.libgcc.mul
-                0x00000456       0x32 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_mulsi3.o)
-                0x00000456                __mulsi3
-                0x0000045a                __mulsi3_helper
+                0x00000446       0x32 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_mulsi3.o)
+                0x00000446                __mulsi3
+                0x0000044a                __mulsi3_helper
  .text.libgcc.div
-                0x00000488       0x44 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_udivmodsi4.o)
-                0x00000488                __udivmodsi4
-                0x000004cc                . = ALIGN (0x2)
+                0x00000478       0x44 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_udivmodsi4.o)
+                0x00000478                __udivmodsi4
+                0x000004bc                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000004cc        0x0 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
-                0x000004cc                _exit
-                0x000004cc                exit
+ .fini9         0x000004bc        0x0 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
+                0x000004bc                _exit
+                0x000004bc                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -331,11 +331,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000004cc        0x4 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
+ .fini0         0x000004bc        0x4 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
  *(.fini0)
-                0x000004d0                _etext = .
+                0x000004c0                _etext = .
 
-.data           0x00800060        0x2 load address 0x000004d0
+.data           0x00800060        0x2 load address 0x000004c0
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -377,8 +377,8 @@ END GROUP
                 0x00800076                pulseOn
  *(COMMON)
                 0x0080007a                PROVIDE (__bss_end, .)
-                0x000004d0                __data_load_start = LOADADDR (.data)
-                0x000004d2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000004c0                __data_load_start = LOADADDR (.data)
+                0x000004c2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080007a        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
