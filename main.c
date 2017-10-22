@@ -14,7 +14,7 @@
 #define DUTY_MIN_LIMIT	2	// min/max limits according...
 #define DUTY_MAX_LIMIT	249	// ... your fan
 
-#define SAMPLE_RATE     1792  	// samples of input pulses to calculate the duty rate
+#define SAMPLE_RATE     1536  	// samples of input pulses to calculate the duty rate
 #define SAMPLE_TIME	524288 	// max. sample time to reset timer1 overflow
 
 volatile uint32_t	pulseOn = 0,
@@ -25,9 +25,9 @@ volatile uint32_t	pulseOn = 0,
 volatile uint8_t	pwmDuty = 0,
 			timerVal = 0;
 volatile bool		fallingEdge = false,
-			pwmOn = true,
 			inputPulse = false;
-				
+bool			pwmOn = true;
+
 int main()
 {
 	DDRB |= _BV(PWM_OUTPUT);	// set PWM_PIN as output
