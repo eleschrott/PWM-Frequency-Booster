@@ -24,13 +24,22 @@ Schematics:
 Software:
 
 In the header section you can find some values to adjust the program according to your situation:
-```c++
+```c
 #define PWM_INPUT      // PWM low frequency input pin
 #define PWM_OUTPUT     // PWM high frequency output pin
 #define PWM_FREQ_HIGH  // PWM frequency: 0 = 16KHz or 1 = 32KHz
 #define DUTY_MIN_LIMIT // min limit according your fan 
 #define DUTY_MAX_LIMIT // max limit according your fan
 ```
+
+To get more or less precise values you can adjust the SAMPLE_RATE. More accuracy needs more time, try with some values to find the best for your project. A good guide value is times of 256, 512 or 1024.
+```c
+#define SAMPLE_RATE 1024 // faster reaction, but a smaller accuracy
+#define SAMPLE_RATE 1280 // little bit slower reaction, but better accuracy
+#define SAMPLE_RATE 1536 // good agreement of speed and precision
+#define SAMPLE_RATE 1792 // slower reaction of pwm changes, but high accuracy
+```
+
 Programmer:
 
 One hint to program the MCU: Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
