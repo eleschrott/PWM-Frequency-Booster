@@ -11,13 +11,6 @@ d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/.
 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_clear_bss.o)
                               main.o (__do_clear_bss)
 
-Allocating common symbols
-Common symbol       size              file
-
-pulseLength         0x4               main.o
-pwmValue            0x4               main.o
-pulseOn             0x4               main.o
-
 Discarded input sections
 
  .data          0x00000000        0x0 D:/Programme/Elektronik/Atmel/Studio/7.0/Packs/Atmel/ATtiny_DFP/1.3.132/gcc/dev/attiny85/avr25/crtattiny85.o
@@ -225,7 +218,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x408
+.text           0x00000000      0x4d0
  *(.vectors)
  .vectors       0x00000000       0x1e D:/Programme/Elektronik/Atmel/Studio/7.0/Packs/Atmel/ATtiny_DFP/1.3.132/gcc/dev/attiny85/avr25/crtattiny85.o
                 0x00000000                __vector_default
@@ -300,26 +293,26 @@ END GROUP
                 0x00000056                . = ALIGN (0x2)
  *(.text.*)
  .text.startup.main
-                0x00000056       0x86 main.o
+                0x00000056       0xa4 main.o
                 0x00000056                main
  .text.__vector_4
-                0x000000dc       0x72 main.o
-                0x000000dc                __vector_4
+                0x000000fa       0x6a main.o
+                0x000000fa                __vector_4
  .text.__vector_2
-                0x0000014e      0x240 main.o
-                0x0000014e                __vector_2
+                0x00000164      0x2f2 main.o
+                0x00000164                __vector_2
  .text.libgcc.mul
-                0x0000038e       0x32 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_mulsi3.o)
-                0x0000038e                __mulsi3
-                0x00000392                __mulsi3_helper
+                0x00000456       0x32 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_mulsi3.o)
+                0x00000456                __mulsi3
+                0x0000045a                __mulsi3_helper
  .text.libgcc.div
-                0x000003c0       0x44 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_udivmodsi4.o)
-                0x000003c0                __udivmodsi4
-                0x00000404                . = ALIGN (0x2)
+                0x00000488       0x44 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_udivmodsi4.o)
+                0x00000488                __udivmodsi4
+                0x000004cc                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000404        0x0 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
-                0x00000404                _exit
-                0x00000404                exit
+ .fini9         0x000004cc        0x0 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
+                0x000004cc                _exit
+                0x000004cc                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -338,11 +331,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000404        0x4 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
+ .fini0         0x000004cc        0x4 d:/programme/elektronik/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr25\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000408                _etext = .
+                0x000004d0                _etext = .
 
-.data           0x00800060        0x2 load address 0x00000408
+.data           0x00800060        0x2 load address 0x000004d0
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -356,33 +349,42 @@ END GROUP
                 0x00800062                _edata = .
                 0x00800062                PROVIDE (__data_end, .)
 
-.bss            0x00800062       0x10
+.bss            0x00800062       0x18
                 0x00800062                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.inputPulse
                 0x00800062        0x1 main.o
                 0x00800062                inputPulse
- .bss.first     0x00800063        0x1 main.o
-                0x00800063                first
- .bss.samples   0x00800064        0x1 main.o
-                0x00800064                samples
+ .bss.fallingEdge
+                0x00800063        0x1 main.o
+                0x00800063                fallingEdge
+ .bss.timerVal  0x00800064        0x1 main.o
+                0x00800064                timerVal
  .bss.pwmDuty   0x00800065        0x1 main.o
                 0x00800065                pwmDuty
- *(COMMON)
- COMMON         0x00800066        0xc main.o
-                0x00800066                pulseLength
+ .bss.samples   0x00800066        0x4 main.o
+                0x00800066                samples
+ .bss.pwmValue  0x0080006a        0x4 main.o
                 0x0080006a                pwmValue
-                0x0080006e                pulseOn
-                0x00800072                PROVIDE (__bss_end, .)
-                0x00000408                __data_load_start = LOADADDR (.data)
-                0x0000040a                __data_load_end = (__data_load_start + SIZEOF (.data))
+ .bss.pulseLength
+                0x0080006e        0x4 main.o
+                0x0080006e                pulseLength
+ .bss.pulseTime
+                0x00800072        0x4 main.o
+                0x00800072                pulseTime
+ .bss.pulseOn   0x00800076        0x4 main.o
+                0x00800076                pulseOn
+ *(COMMON)
+                0x0080007a                PROVIDE (__bss_end, .)
+                0x000004d0                __data_load_start = LOADADDR (.data)
+                0x000004d2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800072        0x0
+.noinit         0x0080007a        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800072                _end = .
+                0x0080007a                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
