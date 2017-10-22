@@ -73,7 +73,7 @@ int main()
 	}
 }
 
-	// ISR for timer1 overflow
+// ISR for timer1 overflow
 ISR (TIMER1_OVF_vect)
 {
 	pulseTime += 256;
