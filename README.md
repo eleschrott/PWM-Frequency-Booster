@@ -1,4 +1,4 @@
-# PWM-Frequency-Booster
+# PWM-Frequency Booster
 ### Convert low pwm frequency of  ~980Hz up to 32Khz
 ***
 If it's necessary to have higher frequency on puls width modulation than a standard MCU is able to and its not practicable to increase the controller timer frequency, you can use this solution.
