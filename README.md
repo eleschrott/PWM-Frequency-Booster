@@ -41,7 +41,7 @@ To get more or less precise values you can adjust the SAMPLE_RATE. More accuracy
 #define SAMPLE_RATE 1536 // good agreement of speed and precision
 #define SAMPLE_RATE 1792 // slower reaction of pwm changes, but high accuracy
 ```
-If you try out some diffent values of SAMPLE_RATE, its a good idea to look above SAMPLE_TIME. This time is in dependence of the rate. Higher sample rate needs more time to calculate the duty cycle, so the sample time should also grow and vice versa.
+If you try out some diffent values of **SAMPLE_RATE**, its a good idea to look above **SAMPLE_TIME**. This time is in dependence of the rate. Higher sample rate needs more time to calculate the duty cycle, so the sample time should also grow and vice versa.
 
 Programmer:
 
