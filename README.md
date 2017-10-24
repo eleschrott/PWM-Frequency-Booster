@@ -35,11 +35,13 @@ In the header section you can find some values to adjust the program according t
 To get more or less precise values you can adjust the SAMPLE_RATE. More accuracy needs more time, try with some values to find the best for your project. A good guide value is times of 256, 512 or 1024.
 ```c
 // some examples:
-#define SAMPLE_RATE 1024 // faster reaction, but a smaller accuracy
+#define SAMPLE_RATE 512  // verry fast reaction
+#define SAMPLE_RATE 1024 // fast reaction, but a smaller accuracy
 #define SAMPLE_RATE 1280 // little bit slower reaction, but better accuracy
 #define SAMPLE_RATE 1536 // good agreement of speed and precision
 #define SAMPLE_RATE 1792 // slower reaction of pwm changes, but high accuracy
 ```
+If you try out some diffent values of SAMPLE_RATE, its a good idea to look above SAMPLE_TIME. This time is in dependence of the rate. Higher sample rate needs more time to calculate the duty cycle, so the sample time should also grow and vice versa.
 
 Programmer:
 
