@@ -13,29 +13,29 @@
 #define PWM_INPUT		PB4		// PWM low frequency input pin
 #define PWM_OUTPUT		PB0		// PWM high frequency output pin
 
-#define PWM_FREQ_HIGH	1		// PWM frequency:	0 = 16KHz
-								//					1 = 32KHz 
+#define PWM_FREQ_HIGH		1		// PWM frequency: 0 = 16KHz
+						//		  1 = 32KHz 
 
-#define DUTY_MIN_LIMIT	2		// min/max limits according...
-#define DUTY_MAX_LIMIT	245		// ... your fan
+#define DUTY_MIN_LIMIT		2		// min/max limits according...
+#define DUTY_MAX_LIMIT		245		// ... your fan
 
-#define SAMPLE_RATE     512		// 384, 1024, 1536... samples of input pulses to calculate the duty rate
-#define SAMPLE_TIME		393216	// max. sample time to reset timer1 overflow, in dependence on sample rate!
+#define SAMPLE_RATE     	512		// 384, 1024, 1536... samples of input pulses to calculate the duty rate
+#define SAMPLE_TIME		393216		// max. sample time to reset timer1 overflow, in dependence on sample rate!
 
 volatile uint32_t		pulseOn = 0,
-						pulseTime = 0,
-						pulseLength = 0,
-						pwmValue = 0,
-						samples = 0;
+				pulseTime = 0,
+				pulseLength = 0,
+				pwmValue = 0,
+				samples = 0;
 
 volatile uint8_t		pwmDuty = 0,
-						timerVal = 0;
+				timerVal = 0;
 
 volatile bool			fallingEdge = false,
-						inputPulse = false,
-						permaHigh = false;
+				inputPulse = false,
+				permaHigh = false;
 
-bool					pwmOn = true;
+bool				pwmOn = true;
 			
 int main()
 {
@@ -43,20 +43,20 @@ int main()
 	PORTB &= ~_BV(PWM_OUTPUT);	// set PWM_PIN to LOW
 
 	PCMSK |= _BV(PWM_INPUT);	// turn on interrupts on pin PWM_INPUT
-	GIMSK |= _BV(PCIE);			// turns on pin change interrupts
+	GIMSK |= _BV(PCIE);		// turns on pin change interrupts
 
-	TCCR1 |= _BV(CS01);			// timer1 prescaler 8 = 1MHz 
+	TCCR1 |= _BV(CS01);		// timer1 prescaler 8 = 1MHz 
 	TIMSK |= _BV(TOIE1);		// set overflow interrupt on timer1
 
-	sei();						// enable interrupts
+	sei();				// enable interrupts
 
 	#if defined(PWM_FREQ_HIGH) && PWM_FREQ_HIGH == 1 // if PWM_FREQ_HIGH set to 1, use fast pwm mode
 	TCCR0A |= _BV(COM0A1) | _BV(WGM01) | _BV(WGM00); // set OC0A on compare match and fast pwm mode with 32KHz
 	#else
-	TCCR0A |= _BV(COM0A1) | _BV(WGM00);				 // set OC0A on compare match and normal pwm with 16KHz
+	TCCR0A |= _BV(COM0A1) | _BV(WGM00);		 // set OC0A on compare match and normal pwm with 16KHz
 	#endif
 
-	TCCR0B |= _BV(CS00);							 // timer0 no prescaling = 8MHz
+	TCCR0B |= _BV(CS00);				 // timer0 no prescaling = 8MHz
 
 	while (1)
 	{
@@ -84,9 +84,9 @@ int main()
 		else if (((pwmOn == true) && (pwmDuty <= DUTY_MIN_LIMIT)) || ((pwmOn == true) && (inputPulse == false))) // stop pwm
 		{
 			cli();
-			TCCR0B	&= ~_BV(CS00);		 // stop timer0 
-			PORTB	&= ~_BV(PWM_OUTPUT); // set PWM_OUTPUT to LOW
-			DDRB	&= ~_BV(PWM_OUTPUT); // erase PWM_PIN from output register
+			TCCR0B	&= ~_BV(CS00);		// stop timer0 
+			PORTB	&= ~_BV(PWM_OUTPUT);	// set PWM_OUTPUT to LOW
+			DDRB	&= ~_BV(PWM_OUTPUT);	// erase PWM_PIN from output register
 			pwmOn = false;
 			pwmValue = 0;
 			samples = 0;
@@ -111,20 +111,20 @@ ISR(TIMER1_OVF_vect)
 ISR(PCINT0_vect)
 {
 	pulseLength = pulseTime;
-	timerVal = TCNT1;			// save timer1 register
+	timerVal = TCNT1;		// save timer1 register
 	permaHigh = false;
 
 	if (PINB & _BV(PWM_INPUT))	// rising edge of pulse
 	{	
 		permaHigh = true;
 
-		if (!fallingEdge)		// begin of pulse
+		if (!fallingEdge)	// begin of pulse
 		{
 			fallingEdge = true;
 			pulseTime = 0;
 			pulseLength = 0;
 			pulseOn = 0;
-			TCNT1 = 0;			// start timer1
+			TCNT1 = 0;	// start timer1
 			return;
 		}
 		else // next rising edge, end of period
