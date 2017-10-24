@@ -42,7 +42,7 @@ To get more or less precise values you can adjust the SAMPLE_RATE. More accuracy
 #define SAMPLE_RATE 1792 // slower reaction of pwm changes, but high accuracy
 ```
 If you try out some diffent values of **SAMPLE_RATE**, its a good idea to deliberate about **SAMPLE_TIME**. This time is in dependence of the rate. Higher sample rate needs more time to calculate the duty cycle, so the sample time should also grow and vice versa.
-
+***
 Programmer:
 
 One hint to program the MCU: Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
