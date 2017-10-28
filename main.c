@@ -3,8 +3,6 @@
 ******* by Wolfgang S. (eleschrott @github.com) ********************
 ********************************************************************/
 
-#define F_CPU 8000000UL
-
 #include <stdint.h>
 #include <stdbool.h>
 #include <avr/io.h>
