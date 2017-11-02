@@ -4,12 +4,12 @@
 If it's necessary to have higher frequency on puls width modulation than a standard MCU is able to and its not practicable to increase the controller timer frequency, you can use this solution.
 If your fan works like a speaker, you know what I mean :smirk:
 
-An ATTiny85 or similar MCU, convert the low pwm-frequency of **976.5625Hz** (e.g. a standard Arduino pwm frequency) up to
+An ATtiny85 or similar MCU, convert the low pwm-frequency of **976.5625Hz** (e.g. a standard Arduino pwm frequency) up to
 **32KHz**. You need only a cheap ATTiny model, this program and a 10k resistor. The duty cycle of the puls is not touched, that means:
 ````
 Input Duty Cycle = Output Duty Cycle
 ````
-#### In this example an ATTiny85 is used. <p align="left"><img src="img/attinyx5.png" width="550"/></p>
+#### In this example an ATtiny85 is used. <p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
 ---
 Schematics:
