@@ -9,10 +9,11 @@ An ATtiny85 or similar MCU, convert the low pwm-frequency of **976.5625Hz** (e.g
 ````
 Input Duty Cycle = Output Duty Cycle
 ````
-#### In this example an ATtiny85 is used. <p align="left"><img src="img/attinyx5.png" width="550"/></p>
+In this example an ATtiny85 is used.
+<p align="left"><img src="img/attinyx5.png" width="550"/></p>
 
 ---
-Schematics:
+##### Schematics:
 
 <p align="left"><img src="img/schematic.png" width="550"/></p>
 
@@ -21,7 +22,7 @@ Schematics:
 >- The two caps are standard blocking capacitors
   
 ---
-Software:
+##### Software:
 
 In the header section you can find some values to adjust the program according to your situation:
 ```c
@@ -43,7 +44,7 @@ To get more or less precise values you can adjust the SAMPLE_RATE. More accuracy
 ```
 If you try out some diffent values of **SAMPLE_RATE**, its a good idea to deliberate about **SAMPLE_TIME**. This time is in dependence of the rate. Higher sample rate needs more time to calculate the duty cycle, so the sample time should also grow and vice versa.
 ***
-Programmer:
+##### Programmer:
 
 One hint to program the MCU: Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
 <p align="left"><img src="img/fusebits.png" width="550"/></p>
