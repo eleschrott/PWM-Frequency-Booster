@@ -47,4 +47,4 @@ If you try out some diffent values of **SAMPLE_RATE**, its a good idea to delibe
 ##### Programmer:
 
 One hint to program the MCU: Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
-<p align="left"><img src="img/fuselb.png" width="550"/></p>
+<p align="left"><img src="img/fuselb.png"/></p>
