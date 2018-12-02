@@ -49,9 +49,9 @@ If you try out some diffent values of **SAMPLE_RATE**, its a good idea to delibe
 One hint to program the MCU:
 
 Its important to erase the **Fuse Low Byte CKDIV8** of the MCU to get 8MHz Clock frequency!
+
+Example on MiniPro Universal Programmer
 <p align="left"><img src="img/fuselb.png"/></p>
-Example from MiniPro Universal Programmer
 
-
+Example with Atmel ICE Programmer and Atmel Studio
 <p align="left"><img src="img/fuses_atmelice.png"/></p>
-Example from Atmel ICE Programmer with Atmel Studio
